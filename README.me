@@ -1,0 +1,47 @@
+## Estructura del Proyecto
+
+- **`/src/api/`**: Lógica para interactuar con la API backend.
+- **`/src/auth/`**: Módulos relacionados con la autenticación y restauración de sesión.
+- **`/src/store/`**: Gestión del estado global usando Zustand.
+- **`/src/screens/`**: Pantallas principales de la aplicación (Login, Home, Register).
+- **`/src/utils/`**: Utilidades y almacenamiento seguro.
+
+## Patrones de Diseño Aplicados
+
+### 1. **Zustand para el estado global**
+Se utiliza Zustand para gestionar el estado de autenticación de manera global, permitiendo almacenar y restaurar la sesión de manera eficiente.
+
+### 2. **react-query para manejo de datos**
+Usamos react-query para realizar las solicitudes de login y registro, gestionando los estados de carga, error y éxito de forma centralizada.
+
+### 3. **arquitectura modular**
+La aplicación está dividida en capas:
+- **`/api/`**: Lógica de interacción con el backend.
+- **`/auth/`**: Lógica relacionada con la autenticación.
+- **`/store/`**: Estado global de la app gestionado con Zustand.
+- **`/screens/`**: Interfaz de usuario (pantallas).
+
+### 4. **Almacenamiento seguro de tokens**
+Los tokens JWT se almacenan de forma segura usando **EncryptedStorage**, asegurando que el token no sea accesible de forma simple.
+
+
+################ Instalación ################
+
+1. Clona este repositorio:
+   git clone  https://github.com/santiagoGst/authJWT.git
+   
+2. Ejecutar API (se debe contar con SDK .Net8 instalado previamente)
+   Caso 1: Con Visual Studio
+   - Entrar a la carpeta ApiAuth y ejecutar (doble clic izquierdo) el archivo ApiAuth.sln
+   - una vez abierto el proyacto en visual studio dar clic sobre el botón ejecutar
+
+   Caso 2: desde consola
+   - Entrar a la carpeta ApiAuth/ApiAuth desde la consola, asegurando que se encuatre en la misma carpeta que los archivos del proyecto
+   - Ejecutar el comando "dotnet watch run"
+
+3. Ejecutar aplicación cliente (se debe contar node.js instalado previamente)
+   - Abrir la carpeta my-app desde conola o en visual studio code
+   - En consola, ejecutar el comando "npm install" para descargar las dependencias
+   - En consola, ejecutar el comando "npm start" para ejecutar programa
+   - Una vez en ejecucion presionamos la tecla "w" para abrir la pagina en el navegador web
+
